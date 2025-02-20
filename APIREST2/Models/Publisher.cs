@@ -21,7 +21,7 @@ namespace APIREST2.Models
         [EmailAddress]
         public string ContactEmail { get; set; }
     
-        [Range(1800, 2024)]
+        [Range(1800, 2025)]
         public int? FoundedYear { get; set; }
     
         [JsonIgnore]
