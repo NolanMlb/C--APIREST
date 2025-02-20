@@ -15,7 +15,10 @@ namespace APIREST2.Controllers
             _publisherService = publisherService;
         }
 
-        // GET: api/publishers
+        /// <summary>
+        /// Retrieves all publishers.
+        /// </summary>
+        /// <returns>A list of publishers.</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Publisher>>> GetPublishers()
         {
@@ -23,7 +26,11 @@ namespace APIREST2.Controllers
             return Ok(publishers);
         }
 
-        // POST: api/publishers
+        /// <summary>
+        /// Creates a new publisher.
+        /// </summary>
+        /// <param name="publisher">The publisher to create.</param>
+        /// <returns>The created publisher.</returns>
         [HttpPost]
         public async Task<ActionResult<Publisher>> CreatePublisher(Publisher publisher)
         {
@@ -38,7 +45,11 @@ namespace APIREST2.Controllers
             }
         }
 
-        // DELETE: api/publishers/5
+        /// <summary>
+        /// Updates a publisher.
+        /// </summary>
+        /// <param name="id">The id of the publisher to update.</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeletePublisher(int id)
         {

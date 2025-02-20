@@ -15,7 +15,13 @@ namespace APIREST2.Controllers
             _loanService = loanService;
         }
 
-        // GET: api/loans
+        /// <summary>
+        /// Retrieves all loans.
+        /// </summary>
+        /// <param name="bookId"></param>
+        /// <param name="borrowerName">The name of the borrower.</param>
+        /// <param name="borrowDate">The date the book was borrowed.</param>
+        /// <returns></returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Loan>>> GetLoans([FromQuery] int? bookId, [FromQuery] string? borrowerName, [FromQuery] DateTime? borrowDate)
         {
@@ -23,7 +29,11 @@ namespace APIREST2.Controllers
             return Ok(loans);
         }
 
-        // POST: api/loans
+        /// <summary>
+        /// Creates a new loan.
+        /// </summary>
+        /// <param name="loan"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ActionResult<Loan>> CreateLoan(Loan loan)
         {
@@ -38,7 +48,11 @@ namespace APIREST2.Controllers
             }
         }
 
-        // PUT: api/loans/{id}/return
+        /// <summary>
+        /// Returns a loan.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         [HttpPut("{id}/return")]
         public async Task<ActionResult<Loan>> ReturnLoan(int id)
         {

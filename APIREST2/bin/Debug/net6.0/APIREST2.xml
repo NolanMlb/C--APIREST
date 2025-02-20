@@ -1,0 +1,182 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>APIREST2</name>
+    </assembly>
+    <members>
+        <member name="M:APIREST2.Controllers.BooksController.GetBooks(System.String,System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32},System.Int32,System.Int32,System.String,System.String)">
+            <summary>
+            Retrieves all books.
+            </summary>
+            <remarks>
+            This endpoint retrieves all books. It supports filtering by author, year, category, and publisher.
+            Also, it supports pagination and sorting.
+            </remarks>
+            <param name="author">The author of the book.</param>
+            <param name="year">The year of publication.</param>
+            <param name="categoryId"></param>
+            <param name="publisherId"></param>
+            <param name="page">The page number to retrieve.</param>
+            <param name="pageSize">The number of items per page.</param>
+            <param name="sortBy"></param>
+            <param name="sortOrder"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.BooksController.GetBook(System.Int32)">
+            <summary>
+            Retrieves a specific book.
+            </summary>
+            <remarks>
+            This endpoint retrieves a specific book by its ID.
+            </remarks>
+            <param name="id">The ID of the book to retrieve.</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.BooksController.PostBook(APIREST2.Models.Book)">
+            <summary>
+            Creates a new book.
+            </summary>
+            <remarks>
+            This endpoint creates a new book. It requires a title, author, year, isbn, category, and publisher.
+            </remarks>
+            <param name="book">The book to create.</param>
+            <returns>The created book.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.BooksController.PutBook(System.Int32,APIREST2.Models.Book)">
+            <summary>
+            Updates a book.
+            </summary>
+            <param name="id">The id of the book to update.</param>
+            <param name="book">The updated book.</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.BooksController.DeleteBook(System.Int32)">
+            <summary>
+            Deletes a book.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.CategoriesController.GetCategories">
+            <summary>
+            Retrieves all categories.
+            </summary>
+            <returns>A list of categories.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.CategoriesController.CreateCategory(APIREST2.Models.Category)">
+            <summary>
+            Creates a new category.
+            </summary>
+            <param name="category">The category to create.</param>
+            <returns>The created category.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.CategoriesController.DeleteCategory(System.Int32)">
+            <summary>
+            Delete a category.
+            </summary>
+            <param name="id">The id of the category to update.</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.LoansController.GetLoans(System.Nullable{System.Int32},System.String,System.Nullable{System.DateTime})">
+            <summary>
+            Retrieves all loans.
+            </summary>
+            <param name="bookId"></param>
+            <param name="borrowerName">The name of the borrower.</param>
+            <param name="borrowDate">The date the book was borrowed.</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.LoansController.CreateLoan(APIREST2.Models.Loan)">
+            <summary>
+            Creates a new loan.
+            </summary>
+            <param name="loan"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.LoansController.ReturnLoan(System.Int32)">
+            <summary>
+            Returns a loan.
+            </summary>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.PublishersController.GetPublishers">
+            <summary>
+            Retrieves all publishers.
+            </summary>
+            <returns>A list of publishers.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.PublishersController.CreatePublisher(APIREST2.Models.Publisher)">
+            <summary>
+            Creates a new publisher.
+            </summary>
+            <param name="publisher">The publisher to create.</param>
+            <returns>The created publisher.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.PublishersController.DeletePublisher(System.Int32)">
+            <summary>
+            Updates a publisher.
+            </summary>
+            <param name="id">The id of the publisher to update.</param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Controllers.UsersController.GetUsers">
+            <summary>
+            Retrieves all users.
+            </summary>
+            <remarks>
+            This endpoint retrieves all users.
+            </remarks>
+            <returns>A list of users.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.UsersController.CreateUser(APIREST2.Models.User)">
+            <summary>
+            Creates a new user.
+            </summary>
+            <remarks>
+            This endpoint creates a new user.
+            </remarks>
+            <param name="user">The user to create.</param>
+            <returns>The created user.</returns>
+        </member>
+        <member name="M:APIREST2.Controllers.UsersController.DeleteUser(System.Int32)">
+            <summary>
+            Deletes a user by ID.
+            </summary>
+            <remarks>
+            This endpoint deletes a user by ID.
+            </remarks>
+            <param name="id"></param>
+            <returns></returns>
+        </member>
+        <member name="M:APIREST2.Services.UserService.GetAllUsers">
+            <summary>
+            Retrieves all users.
+            </summary>
+            <returns>A list of users.</returns>
+        </member>
+        <member name="M:APIREST2.Services.UserService.CreateUser(APIREST2.Models.User)">
+            <summary>
+            Creates a new user.
+            </summary>
+            <param name="user">The user to create.</param>
+            <returns>The created user.</returns>
+            <exception cref="T:System.InvalidOperationException">Thrown when there is an error creating the user.</exception>
+        </member>
+        <member name="M:APIREST2.Services.UserService.DeleteUser(System.Int32)">
+            <summary>
+            Deletes a user by ID.
+            </summary>
+            <param name="id">The ID of the user to delete.</param>
+            <returns>True if the user was deleted, false if the user was not found.</returns>
+            <exception cref="T:System.Exception">Thrown when there is an error deleting the user.</exception>
+        </member>
+        <member name="M:APIREST2.Services.UserService.UserExists(System.Int32)">
+            <summary>
+            Checks if a user exists by ID.
+            </summary>
+            <param name="id">The ID of the user to check.</param>
+            <returns>True if the user exists, false otherwise.</returns>
+        </member>
+    </members>
+</doc>

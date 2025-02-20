@@ -15,7 +15,10 @@ namespace APIREST2.Controllers
             _categoryService = categoryService;
         }
 
-        // GET: api/categories
+        /// <summary>
+        /// Retrieves all categories.
+        /// </summary>
+        /// <returns>A list of categories.</returns>
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Category>>> GetCategories()
         {
@@ -23,7 +26,11 @@ namespace APIREST2.Controllers
             return Ok(categories);
         }
 
-        // POST: api/categories
+        /// <summary>
+        /// Creates a new category.
+        /// </summary>
+        /// <param name="category">The category to create.</param>
+        /// <returns>The created category.</returns>
         [HttpPost]
         public async Task<ActionResult<Category>> CreateCategory(Category category)
         {
@@ -38,7 +45,11 @@ namespace APIREST2.Controllers
             }
         }
 
-        // DELETE: api/categories/5
+        /// <summary>
+        /// Delete a category.
+        /// </summary>
+        /// <param name="id">The id of the category to update.</param>
+        /// <returns></returns>
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteCategory(int id)
         {

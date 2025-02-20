@@ -51,3 +51,5 @@
 /Users/nolan/Documents/webtech-cours/C#/APIREST2/APIREST2/obj/Debug/net6.0/ref/APIREST2.dll
 /Users/nolan/Documents/webtech-cours/C#/APIREST2/APIREST2/obj/Debug/net6.0/APIREST2.pdb
 /Users/nolan/Documents/webtech-cours/C#/APIREST2/APIREST2/obj/Debug/net6.0/APIREST2.genruntimeconfig.cache
+/Users/nolan/Documents/webtech-cours/C#/APIREST2/APIREST2/bin/Debug/net6.0/APIREST2.xml
+/Users/nolan/Documents/webtech-cours/C#/APIREST2/APIREST2/obj/Debug/net6.0/APIREST2.xml
