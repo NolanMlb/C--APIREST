@@ -1,6 +1,7 @@
 using APIREST2.Models;
 using APIREST2.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
 
 namespace APIREST2.Services
 {
@@ -15,6 +16,10 @@ namespace APIREST2.Services
             _logger = logger;
         }
 
+        /// <summary>
+        /// Retrieves all users.
+        /// </summary>
+        /// <returns>A list of users.</returns>
         public async Task<IEnumerable<User>> GetAllUsers()
         {
             try
@@ -30,6 +35,12 @@ namespace APIREST2.Services
             }
         }
 
+        /// <summary>
+        /// Creates a new user.
+        /// </summary>
+        /// <param name="user">The user to create.</param>
+        /// <returns>The created user.</returns>
+        /// <exception cref="InvalidOperationException">Thrown when there is an error creating the user.</exception>
         public async Task<User> CreateUser(User user)
         {
             try
@@ -46,6 +57,12 @@ namespace APIREST2.Services
             }
         }
 
+        /// <summary>
+        /// Deletes a user by ID.
+        /// </summary>
+        /// <param name="id">The ID of the user to delete.</param>
+        /// <returns>True if the user was deleted, false if the user was not found.</returns>
+        /// <exception cref="Exception">Thrown when there is an error deleting the user.</exception>
         public async Task<bool> DeleteUser(int id)
         {
             try
@@ -67,6 +84,16 @@ namespace APIREST2.Services
                 _logger.LogError(ex, "Error deleting user with ID {Id}", id);
                 throw;
             }
+        }
+
+        /// <summary>
+        /// Checks if a user exists by ID.
+        /// </summary>
+        /// <param name="id">The ID of the user to check.</param>
+        /// <returns>True if the user exists, false otherwise.</returns>
+        private async Task<bool> UserExists(int id)
+        {
+            return await _context.Users.AnyAsync(u => u.Id == id);
         }
     }
 }
